@@ -11,7 +11,7 @@ To convert, call UnitConverter.find(Imperial/Metric)Units("and input your text h
 Dry fettuccine, 8 oz
 Chopped bacon, 2 oz
 Whole milk, 1 gallon
----
+becomes
 Dry fettuccine, 240 gr
 Chopped bacon, 60 g
 Whole milk, 4 l
