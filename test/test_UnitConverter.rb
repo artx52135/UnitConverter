@@ -37,27 +37,23 @@ def test_convertion_rft
   assert Converter.new('6 feet').find_and_replace_imperial_units=='1.83 meters'
 end
 
-#puts test_convertion_rft
 #rl rml rk rgr rcm rm
-
-=begin
 def test_convertion_rl
-  assert replace_metric_units('1 liter')=='1 quarts' and replace_metric_units('4 liters')=='1.0 gallons'
+  assert Converter.new('1 liter').find_and_replace_metric_units=='1 quarts' and Converter.new('4 liters').find_and_replace_metric_units=='1.0 gallons'
 end
 def test_convertion_rk
-  assert replace_metric_units("18 kilograms")=="40.0 pounds"
+  assert Converter.new("18 kilograms").find_and_replace_metric_units=="40.0 pounds"
 end
 def test_convertion_rgr
-  assert replace_metric_units('500 grams')=='16.67 ounces'
+  assert Converter.new('500 grams').find_and_replace_metric_units=='16.67 ounces'
 end
 def test_convertion_rcm
-  assert replace_metric_units('98 centimeters')=='39.2 inches'
+  assert Converter.new('98 centimeters').find_and_replace_metric_units=='39.2 inches'
 end
 def test_convertion_rm
-  assert replace_metric_units('2 meters')=='6.56 feet'
+  assert Converter.new('2 meters').find_and_replace_metric_units=='6.56 feet'
 end
 def test_convertion_rml
-  assert replace_metric_units('100 milliliters')=='3.33 fl ounces'
+  assert Converter.new('100 milliliters').find_and_replace_metric_units=='3.33 fl ounces'
 end
-=end
 end
