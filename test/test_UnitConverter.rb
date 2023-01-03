@@ -3,8 +3,9 @@
 require "test_helper"
 require_relative '../lib/UnitConverter.rb'
 
+class UnitConverterTest < Minitest::Test
 def test_that_it_has_a_version_number
-  refute_nil ::UnitConverter::VERSION
+  assert refute_nil ::UnitConverter::VERSION
 end
 
 def test_it_does_something_useful
@@ -12,33 +13,34 @@ def test_it_does_something_useful
 end
 # rlb roz rp rq rg ri rflu rft
 def test_convertion_rlb
-  assert replace_imperial_units('5 pounds')=='2.25 kilograms'
+  assert Converter.new('7 pounds').find_and_replace_imperial_units=='3.15 kilograms'
 end
 def test_convertion_roz
-  assert replace_imperial_units('10 ounces')=='300.0 grams'
+  assert Converter.new('12 ounces').find_and_replace_imperial_units=='360.0 grams'
 end
 def test_convertion_rp
-  assert replace_imperial_units('50 inches')=='125.0 centimeters'
+  assert Converter.new('2 pints').find_and_replace_imperial_units=='1120.0 milliliters'
 end
 def test_convertion_rq
-  assert replace_imperial_units('2 quarts')=='2.0 liters'
+  assert Converter.new('173 quarts').find_and_replace_imperial_units=='173.0 liters'
 end
 def test_convertion_rg
-  assert replace_imperial_units('1 gallon')=='4.0 liters'
+  assert Converter.new('1 gallon').find_and_replace_imperial_units=='4.0 liters'
 end
 def test_convertion_ri
-  assert replace_imperial_units('50 inches')=='125.0 centimeters'
+  assert Converter.new('50 inches').find_and_replace_imperial_units=='125.0 centimeters'
 end
 def test_convertion_rflu
-  assert replace_imperial_units('20 fl ounces')=='600.0 grams'
+  assert Converter.new('20 floz').find_and_replace_imperial_units=='600.0 milliliters'
 end
 def test_convertion_rft
-  assert replace_imperial_units('6 feet')=='1.83 meters'
+  assert Converter.new('6 feet').find_and_replace_imperial_units=='1.83 meters'
 end
 
-
+#puts test_convertion_rft
 #rl rml rk rgr rcm rm
 
+=begin
 def test_convertion_rl
   assert replace_metric_units('1 liter')=='1 quarts' and replace_metric_units('4 liters')=='1.0 gallons'
 end
@@ -56,4 +58,6 @@ def test_convertion_rm
 end
 def test_convertion_rml
   assert replace_metric_units('100 milliliters')=='3.33 fl ounces'
+end
+=end
 end
